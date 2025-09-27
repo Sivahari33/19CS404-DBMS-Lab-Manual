@@ -300,4 +300,6 @@ foreign key(EmployeeID) references Employees(EmployeeID) );
 
 
 ## RESULT
+<img width="673" height="183" alt="image" src="https://github.com/user-attachments/assets/0b5281a4-6541-47cc-83a0-1a192442ff78" />
+
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
