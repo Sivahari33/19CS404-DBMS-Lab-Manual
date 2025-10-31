@@ -38,123 +38,194 @@ DROP VIEW view_name;
 
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to Retrieve the medications with dosages equal to the highest dosage
+
+Table Name: Medications (attributes: medication_id, medication_name, dosage)
+
+
 
 ```sql
--- Paste your SQL code below for Question 1
+select medication_id, medication_name, dosage from Medications where dosage =(select max(dosage) from Medications);
 ```
 
 **Output:**
+<img width="851" height="312" alt="image" src="https://github.com/user-attachments/assets/fd18eb53-5249-429c-bbc7-8c096eb0fa87" />
 
-![Output1](output.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose salary is EQUAL TO $1500.
 
 ```sql
--- Paste your SQL code below for Question 2
+select * from customers where salary='1500';
 ```
 
 **Output:**
 
-![Output2](output.png)
+
+<img width="1202" height="326" alt="image" src="https://github.com/user-attachments/assets/c30c3ae2-8c29-47ea-b4f2-aa153de0f73e" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+From the following tables write a SQL query to find the order values greater than the average order value of 10th October 2012. Return ord_no, purch_amt, ord_date, customer_id, salesman_id.
+
+Note: date should be yyyy-mm-dd format
 
 ```sql
--- Paste your SQL code below for Question 3
+select ord_no, purch_amt, ord_date, customer_id, salesman_id from orders where purch_amt>(select avg(purch_amt) from orders where ord_date='2012-10-10');
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1228" height="440" alt="image" src="https://github.com/user-attachments/assets/81d36b5e-21b1-444b-982c-4d6d164f967c" />
+
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to Identify customers whose city is different from the city of the customer with the highest ID
+
+SAMPLE TABLE: customer
+
+name             type
+---------------  ---------------
+id               INTEGER
+name             TEXT
+city             TEXT
+email            TEXT
+phone            INTEGER
 
 ```sql
--- Paste your SQL code below for Question 4
+select * from customer where city <>(select city from customer where id=(select max(id) from customer));
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1238" height="477" alt="image" src="https://github.com/user-attachments/assets/3057822d-0e78-4084-8259-85991cd27e05" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose salary is LESS than $2500.
 
 ```sql
--- Paste your SQL code below for Question 5
+select * from customers where salary<2500;
 ```
 
 **Output:**
-
-![Output5](output.png)
+<img width="1233" height="441" alt="image" src="https://github.com/user-attachments/assets/626e9c4f-0313-4c30-b0aa-82bf1166fdda" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose Address as Delhi
 
 ```sql
--- Paste your SQL code below for Question 6
+select * from customers where address='Delhi';
 ```
 
 **Output:**
+<img width="1267" height="343" alt="image" src="https://github.com/user-attachments/assets/41c3da37-7cca-4a2d-a27c-29887c78ffe6" />
 
-![Output6](output.png)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose salary is greater than $4500.
+
 
 ```sql
--- Paste your SQL code below for Question 7
+select * from customers where salary>4500;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1257" height="431" alt="image" src="https://github.com/user-attachments/assets/c86c1192-2bc1-4649-b5af-2d916e80aa92" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL query to Find employees who have an age less than the average age of employees with incomes over 1 million
+
+Employee Table
+
+name             type
+
+------------   ---------------
+
+id                INTEGER
+
+name              TEXT
+
+age               INTEGER
+
+city              TEXT
+
+income           INTEGER
 
 ```sql
--- Paste your SQL code below for Question 8
+select * from employee where age<(select avg(age) from employee where income>'1000000');
 ```
 
 **Output:**
+<img width="1235" height="412" alt="image" src="https://github.com/user-attachments/assets/117acb38-4757-4cdb-b2c2-b6f938bda86e" />
 
-![Output8](output.png)
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write a SQL query to Find employees who have an age less than the average age of employees with incomes over 2.5 Lakh
+
+Employee Table
+
+name             type
+
+------------   ---------------
+
+id                INTEGER
+
+name              TEXT
+
+age               INTEGER
+
+city              TEXT
+
+income            INTEGER
 
 ```sql
--- Paste your SQL code below for Question 9
+select * from employee where age<(select avg(age) from employee where income>250000);
 ```
 
 **Output:**
+<img width="1230" height="492" alt="image" src="https://github.com/user-attachments/assets/95c00860-f03e-4034-b838-fb4f7a9edf91" />
 
-![Output9](output.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a query to display all the customers whose ID is the difference between the salesperson ID of Mc Lyon and 2001.
+
+salesman table
+
+name             type
+---------------  ---------------
+salesman_id      numeric(5)
+name             varchar(30)
+city             varchar(15)
+commission       decimal(5,2)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT *
+FROM customer
+WHERE customer_id = (
+    SELECT salesman_id - 2001
+    FROM salesman
+    WHERE name = 'Mc Lyon'
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1236" height="318" alt="image" src="https://github.com/user-attachments/assets/a53642ba-de3d-4e7d-bc77-33a9ad057259" />
+
 
 
 ## RESULT
