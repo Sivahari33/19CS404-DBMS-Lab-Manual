@@ -49,6 +49,7 @@ select medication_id, medication_name, dosage from Medications where dosage =(se
 ```
 
 **Output:**
+
 <img width="851" height="312" alt="image" src="https://github.com/user-attachments/assets/fd18eb53-5249-429c-bbc7-8c096eb0fa87" />
 
 
@@ -147,22 +148,6 @@ select * from customers where salary>4500;
 ---
 Write a SQL query to Find employees who have an age less than the average age of employees with incomes over 1 million
 
-Employee Table
-
-name             type
-
-------------   ---------------
-
-id                INTEGER
-
-name              TEXT
-
-age               INTEGER
-
-city              TEXT
-
-income           INTEGER
-
 ```sql
 select * from employee where age<(select avg(age) from employee where income>'1000000');
 ```
@@ -173,23 +158,7 @@ select * from employee where age<(select avg(age) from employee where income>'10
 
 **Question 9**
 ---
-Write a SQL query to Find employees who have an age less than the average age of employees with incomes over 2.5 Lakh
-
-Employee Table
-
-name             type
-
-------------   ---------------
-
-id                INTEGER
-
-name              TEXT
-
-age               INTEGER
-
-city              TEXT
-
-income            INTEGER
+Write a SQL query to Find employees who have an age less than the average age of employees with incomes over 2.5 Lakhs
 
 ```sql
 select * from employee where age<(select avg(age) from employee where income>250000);
@@ -202,16 +171,6 @@ select * from employee where age<(select avg(age) from employee where income>250
 **Question 10**
 ---
 Write a query to display all the customers whose ID is the difference between the salesperson ID of Mc Lyon and 2001.
-
-salesman table
-
-name             type
----------------  ---------------
-salesman_id      numeric(5)
-name             varchar(30)
-city             varchar(15)
-commission       decimal(5,2)
-
 ```sql
 SELECT *
 FROM customer
